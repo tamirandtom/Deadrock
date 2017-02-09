@@ -1,0 +1,144 @@
+<!doctype html>
+<html ng-app="deadrockng">
+
+<head>
+      <meta charset="utf-8">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <title>Deadrock</title>
+      <meta name="description" content="Exploring famous musicians age of death">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+      <meta property="og:url" content="http://tamirp.com/deadrock/" />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Exploring famous musicians age of death" />
+      <meta property="og:site_name" content="Deadrock" />
+      <meta property="og:description" content="Exploring famous musicians age of death" />
+      <meta property="og:image" content="http://tamirp.com/deadrock/screen.png" />
+      <meta property="og:image:url" content="http://tamirp.com/deadrock/screen.png" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:type" content="image/png" />
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body id="top" bodyscroll>
+      <resizeListener></resizeListener>
+      <div ng-controller="index">
+            <div class='logocontainer'>
+                  <div class='logosubtitle2'>a scrolling / data thingy, <b>Jan 2017</b> | <a href=''>Share</a></div>
+                  <div class='logotitle'>Deadrock</div>
+                  <div class='logosubtitle'>Exploring famous musicians age of death<br>
+                        <span class='logosubtitle--s'>(data from <a target="_blank" href='https://en.wikipedia.org/wiki/List_of_deaths_in_rock_and_roll'> Wikipedia</a>, made by <a href='http://www.tamirp.com' target="_blank">Tamirp.com</a>)</span></div>
+            </div>
+            <div class='feedcol'>
+                  <div class='feedcol__texts'>
+                        For decades we were convinced that famous musicians have "a tendency" to die at the age of 27. We called it the "Forever
+                        27 club", and there are dozens of websites that deal with the subject. Even I made one last year.
+                        If we try to be rational and follow the laws of probability - we might be able to understand why
+                        more musicians seem to die at the age of 27. It seems that in the 70s a lot of musicians really died
+                        at the age of 27. If we look at the distribution of age of death for famous musicians in the 50s-60s
+                        it actually looks like a fair amount of musicians did die at the age of 27.
+                  </div><br><br>
+                  <div scroll data-index="{{$index}}" 
+                  ng-repeat="element in singerdata" 
+                  getTarget ng-mouseover="element.isCurrentlySelected = 1"
+                  ng-mouseleave="element.isCurrentlySelected = 0" 
+                  class='singername' 
+                  ng-class="{active: ((((element.death.toLowerCase().indexOf(filterage.toLowerCase()) != -1) || (element.date.toLowerCase().indexOf(filterdecade.toLowerCase()) != -1))))}">
+                        <div ng-if="element.isfirsdecade &&  element.year== 1970 " class='feedcol__texts'><br> If we add the musicians who had died in the 70s (they are also the most famous on the 27 list
+                              - Joplin, Morrison and Hendrix), it seems clear that the highest column in the chart is 27.
+                              <br><br></div>
+                        <div ng-if="element.isfirsdecade &&  element.year== 1990 " class='feedcol__texts'><br> From the 80s until now it seems that the distribution pretty much aligns with the death distribution
+                              in the global population for that year, with a tendency to die at the age of 65. <br><br></div>
+                        <div class='yearseperator' ng-show="element.isfirsdecade">{{element.year}}</div>
+                        <div class='dotseperator' ng-show="element.isfirsdecade"> .</div>
+                        {{element.name}}
+                        <div class='insidename'>
+                              <div class='singername'>{{element.name}}</div>
+                              <div class='insideMeta'>Dead at {{element.age}}
+                                    <span ng-if="element.death != ''"> by {{element.death}}</span></div>
+                        </div>
+                        <div class='dotseperator' ng-show="!{{$last}}">.</div>
+                        <div ng-if="$last" class='feedcol__texts'><br> So, Do musicians really have a tendency to die at the age of 27? Yes and no. There is no doubt
+                              that in the 60's and 70’s there was a suspiciously large number of musicians who died at the
+                              age of 27, but since then the distribution aligns with the global age of death chart. And yet,
+                              we still find musicians who die at the age of 27. There might be several reasons- Do less familiar
+                              musicians who died at the age of 27 suddenly become famous only for this trivia detail? Also,
+                              We might be searching “too hard” for famous artists who died at the age of 27, even if not
+                              directly related to music (as Jean-Michel Baptiste), and when a famous musician do die at age
+                              27 (as Amy Winehouse did) We make a big deal of this fact, thereby intensifying the myth.
+                              <br><br></div>
+                  </div>
+                  <div class='spacer'>
+                  </div>
+                  <br><br>
+                  <div class='filtersContainerbottom' ng-class="{opacity1: isbottom}">
+                        <div class='filterheadline'>Filters</div>
+                        <div class='filters' ng-Class="{filtersactive: isbottom, filteron:(currfilter == 12)}" ng-click="filterdecade='ddddd'; filterage='ddddd'; currfilter=12"
+                              ng-init="currfilter = 12">Show all</div>
+                        <div class='filters' ng-Class="{filtersactive: isbottom, filteron:(currfilter == 1)}" ng-click="filterage='drug'; filterdecade='rrrrr'; currfilter=1">Drugs</div>
+                        <div class='filters' ng-Class="{filtersactive: isbottom, filteron:(currfilter == 5)}" ng-click="filterage='cancer'; filterdecade='rrrrr'; currfilter=5">Cancer</div>
+                        <div class='filters' ng-Class="{filtersactive: isbottom, filteron:(currfilter == 2)}" ng-click="filterage='alco'; filterdecade='rrrrr'; currfilter=2">Alchohol</div>
+                        <div class='filters' ng-Class="{filtersactive: isbottom, filteron:(currfilter == 6)}" ng-click="filterage='suicide'; filterdecade='rrrrr'; currfilter=6">Suicide</div>
+                        <div class='filters' ng-Class="{filtersactive: isbottom, filteron:(currfilter == 4)}" ng-click="filterage='heart'; filterdecade='rrrrr'; currfilter=4">Heart</div>
+                        <div class='filters' ng-Class="{filtersactive: isbottom, filteron:(currfilter == 7)}" ng-click="filterage='brain'; filterdecade='rrrrr'; currfilter=7">Brain</div>
+                        <div class='filters' ng-Class="{filtersactive: isbottom, filteron:(currfilter == 8)}" ng-click="filterage='natural'; filterdecade='rrrrr'; currfilter=8">Natural</div>
+                  </div>
+                  <!--ng-class="{dot_on: !(singer.death.toLowerCase().indexOf(filterage.toLowerCase()) != -1 || singer.date.toLowerCase().indexOf(filterdecade.toLowerCase()) != -1) && ($parent.$parent.isbottom) }" -->
+                  <div class='histogram' ng-class="{opacity1: isbottom}">
+                        <div class='col' ng-repeat="n in [] | range:99">
+                              <div class='dot animate-show' ng-show="( $parent.isMobile && $parent.currfilter == 12 || singer.isvisible && $parent.currfilter == 12 ) || ((singer.death.toLowerCase().indexOf(filterage.toLowerCase()) != -1) || (singer.date.toLowerCase().indexOf(filterdecade.toLowerCase()) != -1))"
+                                    ng-repeat="singer in singerdata | filter:{age:n} | orderBy:'-'">
+                                    <div class='insideDotIcon' ng-class='{dec70: (singer.date.toLowerCase().indexOf("197") != -1 || singer.date.toLowerCase().indexOf("196") != -1 || singer.date.toLowerCase().indexOf("195") != -1),dec80: (singer.date.toLowerCase().indexOf("198") != -1),dec90: (singer.date.toLowerCase().indexOf("199") != -1),dec00: (singer.date.toLowerCase().indexOf("200") != -1),dec10: (singer.date.toLowerCase().indexOf("201") != -1), currentlyActive: singer.isCurrentlySelected}'
+                                          style=''></div>
+                                    <div class='insideDot'>
+                                          <div class='insideName'>{{singer.name}}</div>
+                                          <div class='insideMeta'>dead at
+                                                <div class='insideAge'>{{singer.age}}</div> ({{singer.date}})
+                                                <div ng-if="singer.band != ''">known for
+                                                      <div class='insideDeath'>{{singer.band}}</div>
+                                                </div>
+                                                <div ng-if="singer.death != ''">death by
+                                                      <div class='insideDeath'>{{singer.death}}</div>
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                        <div class='histogramLegendContainer'>
+                              <div class='filterstitle' ng-class="{opacity1: isbottom}">
+                                    <div class='histocols histocolsedge'>Age</div>
+                                    <div class='histocols'>20</div>
+                                    <div class='histocols'>30</div>
+                                    <div class='histocols'>40</div>
+                                    <div class='histocols'>50</div>
+                                    <div class='histocols'>60</div>
+                                    <div class='histocols'>70</div>
+                                    <div class='histocols'>80</div>
+                                    <div class='histocols histocolsedge'>90</div>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+            <div class='histobg'></div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+            <script src="js/app.js"></script>
+            <script>
+                  (function (i, s, o, g, r, a, m) {
+                        i['GoogleAnalyticsObject'] = r;
+                        i[r] = i[r] || function () {
+                              (i[r].q = i[r].q || []).push(arguments)
+                        }, i[r].l = 1 * new Date();
+                        a = s.createElement(o),
+                              m = s.getElementsByTagName(o)[0];
+                        a.async = 1;
+                        a.src = g;
+                        m.parentNode.insertBefore(a, m)
+                  })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+                  ga('create', 'UA-71087902-6', 'auto');
+                  ga('send', 'pageview');
+            </script>
+</body>
+
+</html>
+<!--ng-show="singer.death.toLowerCase().indexOf(filterage.toLowerCase()) != -1 || singer.date.toLowerCase().indexOf(filterdecade.toLowerCase()) != -1" -->

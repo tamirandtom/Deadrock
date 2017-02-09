@@ -1,0 +1,423 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+@import url('https://fonts.googleapis.com/css?family=Space+Mono:700i');
+
+* {font-family: 'Montserrat', sans-serif; font-weight:400; cursor:crosshair;} 
+
+/*
+.scrolltobottom {
+position:fixed;
+display:inline-block;
+display:none;
+font-family: 'Space Mono', monospace;
+font-size:24px;
+top:24px;
+right:24px;
+color:#EF5350;
+}
+.scrolltobottom:hover {
+color:#000;
+}*/
+
+
+.currentlyActive {
+    width:24px !important;
+    height:24px !important;
+    top:-8px !important;
+    z-index:101 !important;
+    left:-8px !important;
+    box-shadow: 0px 2px 14px 0px rgba(0,0,0,0.24) !important;
+    z-index:300 !important ;
+    border-radius:15px !important;
+    }
+.insidename {
+    display:none;     
+    transition: all ease-in-out 0.3s; 
+    color:#EF5350;
+    }
+.insidename .singername{
+    color:#EF5350;
+    display:inline-block;
+    margin-bottom:8px;
+    }
+
+.singername .feedcol__texts {
+    color:#EF5350;
+}
+.feedcol .feedcol__texts{
+display:inline-block; 
+font-size:24px; 
+line-height:32px;
+font-family: 'Space Mono', monospace;
+color:#EF5350;
+}
+
+
+.active:hover .insidename {
+    display:inline-block; 
+    transition: all ease-in-out 0.3s;
+    position:absolute; 
+    left:-8px;
+    top:-8px;
+    padding: 8px;
+    background:#fff;
+    border-radius:4px;
+    box-shadow: 0px 2px 14px 0px rgba(0,0,0,0.24);
+    z-index:3;
+    }
+
+.logocontainer {
+text-align:center;
+height:70vh;
+}
+.logotitle {
+text-align:center;
+font-family: 'Space Mono', monospace;
+font-size: 100px;
+color: rgba(0,0,0,0.87);
+letter-spacing: 2px;
+line-height: 100px;
+margin-top:12px;
+}
+.logosubtitle2 b {font-weight:700;}
+.logosubtitle2 {
+font-size: 12px;
+color: #000000;
+letter-spacing: 1.2px;
+line-height: 24px;
+margin-top:20vh;
+}
+.logocontainer  a {color:#EF5350; text-decoration:none; cursor:pointer;}
+.logosubtitle {
+margin-top:32px;
+text-align:center;
+font-size: 16px;
+color: #000000;
+line-height: 24px;
+}
+.logosubtitle--s {
+    font-size:12px;
+}
+
+.logolink {
+
+}
+
+.singername {
+    display:inline;
+    position:relative;
+    font-size:24px;
+    color:#F2F2F2; 
+    /*transition: all ease-in-out 0.3s;*/
+    font-weight:400;
+    }
+.singername:hover {
+    /*color:#64FFDA;*/
+    }
+
+.active {
+    color:#181818; 
+    }
+.backnumber {
+    position:fixed; 
+    top:0px;
+    left:0px;
+    width:100%;
+    display:none;
+    text-align:center;
+    font-size:120px;
+}
+
+.dotseperator {
+    color:rgba(0,0,0,0.12); 
+    display:inline;
+    position:relative;
+    top:-4px;}
+.yearseperator {
+    display:inline;
+    font-family: 'Space Mono', monospace;
+    line-height: 20px;
+    position: relative;
+    top: 1px;
+    color:#EF5350; 
+}
+.col {
+    display:inline-block;
+    width:10px;
+    }
+.dot {
+    transition: all ease-in 0.1s;
+    position:relative;
+    display:block;
+    height:8px; 
+    width:10px; 
+    background:rgba(0,0,0,0); 
+    padding-bottom:2px; 
+    border-radius:0px;
+    }
+.dot:hover {background: #EF5350;}
+
+.histogram {
+    display:block; 
+    position:fixed;
+    transition: all ease-in 0.3s;
+    bottom:66px;
+    width:960px;
+    left:calc(50% - 470px);
+    z-index:2;
+    opacity:0;
+    }
+.histobg {
+position:fixed;
+z-index:1;
+bottom:0px;
+width:100%;
+height:200px;
+left:0px;
+background-image: linear-gradient(-180deg, rgba(255,255,255,0.00) 10%, #FFFFFF 75%);
+}
+.histocols {
+    width: 8.8%;
+    padding-left: 0px;
+    display: inline-block;
+    font-size:14px;
+    color:#EF5350;
+    }
+.feedcol {
+    z-index:20;
+    max-width:960px;
+    padding:0px 32px;
+    margin:auto;
+    }
+
+.histogramLegendContainer {
+    position:fixed;
+    bottom:0px;
+    max-width: 960px;
+    height:70px;
+    width:100%;
+    z-index:100;
+}
+.opacity1 {opacity:1 !important;}
+
+.histogramLegendContainer .filterstitle {
+    opacity:0;
+    transition: all ease-in 0.3s;
+}
+.histogramLegendContainer .filterstitle{ 
+display:block;
+border-top:4px solid #EF5350;
+margin-bottom:8px;
+z-index:200;
+
+}
+  .filtersContainerbottom {
+      transition: opacity 0.3s;
+      z-index:200;
+      position:fixed;
+      top:30vh;
+      left:24px;
+      opacity:0;
+  }
+
+.filterheadline {
+display:block; 
+padding: 4px;
+font-size:17px; 
+font-family: 'Space Mono', monospace;
+
+}
+.filterstitle{
+display:inline-block; 
+font-size:24px; 
+font-family: 'Space Mono', monospace;
+padding-right:9px;
+}
+.filters{
+    cursor:pointer;
+    position:relative;
+    z-index:30;
+    transition: all ease-in 0.2s;
+    display:block;
+    background:rgba(0,0,0,0);
+    color:#ddd;
+    font-size:18px; 
+    padding:4px;
+    margin-bottom: 4px;
+    }
+.filtersactive{
+    color: color:rgba(0,0,0,0.3);
+    }
+.filtersactive:hover {
+    color:#EF5350;
+    }
+.filteron {
+    color:rgba(0,0,0,0.9);
+    }
+
+.spacer {height:80vh;}
+
+.dot_on .insideDotIcon {background:#EF5350;}
+.insideDot {
+    transition: all ease-in 0.2s;
+    padding:24px; 
+    left:24px; 
+    top:-102px; 
+    width:320px; 
+    background:#fff;
+    color:#EF5350;
+    height:auto;
+    border-radius:4px;
+    position:absolute; 
+    opacity:0;
+    z-index:200;
+    box-shadow: 0px 2px 14px 0px rgba(0,0,0,0.24);
+    pointer-events:none;
+    }
+.dot:hover .insideDot {
+    opacity:1;
+    }
+.insideDotIcon {
+    position:relative; 
+    background:#EF5350; 
+    pointer-events:none;
+    width:10px;
+    height:4px;
+    top:0px;
+    left:0px;
+    border-radius:0px;
+    transition: all ease-in 0.1s;
+    z-index:100;
+    }
+.dot:hover .insideDotIcon {
+    background:#EF5350;
+    width:24px;
+    height:24px;
+    top:-8px;
+    z-index:101;
+    left:-8px;
+    border-radius:15px;
+     box-shadow: 0px 2px 14px 0px rgba(0,0,0,0.24);
+
+}
+.dec70 {background:#EF5350;}
+.dec80 {background:#EF5350;}
+.dec90 {background:#EF5350;}
+.dec00 {background:#EF5350;}
+.dec10 {background:#EF5350;}
+
+ /*insideDot label css*/
+
+ .insideName {
+     
+     font-size:24px;font-weight:700;
+     font-family: 'Space Mono', monospace;
+     line-height:28px;
+     margin-bottom:8px;}
+.insideMeta {font-size:14px;font-weight:400;}
+.insideAge {font-weight:400; display:inline;}
+.insideDeath {font-weight:700; display:inline;}
+
+  /*tablet*/
+  @media (min-width: 640px) and (max-width: 1024px) {
+  
+  
+  }
+  /*mobile*/
+  @media (max-width: 1023px) {
+.feedcol__text{
+font-size:18px; 
+line-height:22px;
+}
+      .filterstitle {font-size:18px; line-height:22px;border-width:3px;}
+.histogramLegendContainer .filterstitle {border-top: 3px solid #EF5350 }
+      .filters , .filterheadline{
+        font-size:14px; 
+      line-height:28px;
+     display:inline-block;
+      }
+      .logotitle {
+          font-size:58px;
+          line-height:56px;
+      }
+      .logosubtitle2 {
+          font-size:10px;   
+      }
+      .logosubtitle{
+          font-size:14px;
+      }
+    .singername {
+    font-size: 18px;
+    line-height:22px;
+    display:inline-block;
+    }
+      .dot {
+        height:8px; 
+        width:1.2vh; 
+        padding-bottom:0px;
+        }
+.histogram {
+    display:block; 
+    position:fixed;
+    bottom:65px;
+    width:100vw;
+    left:0px;
+    z-index:200;
+    
+    pointer-events:none;
+    }
+    .col {
+    width:1vw;
+    }
+    .insideDotIcon {
+    width:1vw;
+    height:3px;
+    }
+    .insideDot {
+    padding: 24px 10px;
+    left: 5vw;
+    top: 21vw;
+    width: 84vw;
+    height:15vh;
+    border-radius:0px;
+    position:fixed; 
+    opacity:0;
+    z-index:200;
+    pointer-events:none;
+    }
+    .filtersContainer {
+    position:fixed;
+    bottom:0px;
+    left:0px;
+    max-width: 960px;
+    height:24px;
+    width:100%;
+    z-index:2;
+    }
+    .filtersContainer .filterstitle, .filtersContainerbottom .filterstitle {
+    border-top: 3px solid #000;
+    z-index:1;
+    }
+
+    .histocols {
+        font-size:11px;
+        width:7.7%;
+        padding-left:0px;
+        text-align:center;
+    }
+  .filtersContainerbottom {
+      text-align: center;
+      z-index:200;
+      position:fixed;
+      bottom:0px;
+      left:0px;
+      width:100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+        white-space:nowrap;
+      opacity:1;
+      height:46px;
+      top:initial;
+  }
+
+
+    }
