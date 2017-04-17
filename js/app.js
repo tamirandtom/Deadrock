@@ -6,6 +6,7 @@ App.controller('index', function ($scope, $http) {
   $http.get('data/data.json')
     .then(function (res) {
       $scope.singerdata = res.data;
+      // console.log($scope.singerdata);
     });
   $scope.filterage = 'rrrrrr';
   $scope.filterdecade = 'rrrrrr';
@@ -82,7 +83,7 @@ App.directive("bodyscroll", function ($window) {
       // {
       scope.isbottom = this.pageYOffset > 200;
       //}
-      scope.$apply();
+      // scope.$apply();
     });
   };
 });

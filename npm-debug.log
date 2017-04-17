@@ -1,0 +1,92 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'golang' ]
+2 info using npm@2.14.7
+3 info using node@v4.2.2
+4 verbose install initial load of /Users/tpomerantz/Desktop/server/deadrock/package.json
+5 verbose installManyTop reading scoped package data from /Users/tpomerantz/Desktop/server/deadrock/node_modules/go/package.json
+6 info package.json go@1.0.0 No description
+7 info package.json go@1.0.0 No repository field.
+8 info package.json go@1.0.0 No README data
+9 verbose readDependencies loading dependencies from /Users/tpomerantz/Desktop/server/deadrock/package.json
+10 silly cache add args [ 'golang', null ]
+11 verbose cache add spec golang
+12 silly cache add parsed spec Result {
+12 silly cache add   raw: 'golang',
+12 silly cache add   scope: null,
+12 silly cache add   name: 'golang',
+12 silly cache add   rawSpec: '',
+12 silly cache add   spec: '*',
+12 silly cache add   type: 'range' }
+13 silly addNamed golang@*
+14 verbose addNamed "*" is a valid semver range for golang
+15 silly addNameRange { name: 'golang', range: '*', hasData: false }
+16 silly mapToRegistry name golang
+17 silly mapToRegistry using default registry
+18 silly mapToRegistry registry https://registry.npmjs.org/
+19 silly mapToRegistry uri https://registry.npmjs.org/golang
+20 verbose addNameRange registry:https://registry.npmjs.org/golang not in flight; fetching
+21 verbose request uri https://registry.npmjs.org/golang
+22 verbose request no auth needed
+23 info attempt registry request try #1 at 9:05:41 AM
+24 verbose request id 5441a9756365a5d8
+25 http request GET https://registry.npmjs.org/golang
+26 http 200 https://registry.npmjs.org/golang
+27 verbose headers { server: 'nginx/1.10.1',
+27 verbose headers   'content-type': 'application/json',
+27 verbose headers   'last-modified': 'Tue, 01 Jul 2014 03:05:19 GMT',
+27 verbose headers   etag: 'W/"53b2256f-187"',
+27 verbose headers   'content-encoding': 'gzip',
+27 verbose headers   'cache-control': 'max-age=300',
+27 verbose headers   'content-length': '237',
+27 verbose headers   'accept-ranges': 'bytes',
+27 verbose headers   date: 'Thu, 09 Feb 2017 07:05:41 GMT',
+27 verbose headers   via: '1.1 varnish',
+27 verbose headers   age: '0',
+27 verbose headers   connection: 'keep-alive',
+27 verbose headers   'x-served-by': 'cache-fra1239-FRA',
+27 verbose headers   'x-cache': 'MISS',
+27 verbose headers   'x-cache-hits': '0',
+27 verbose headers   'x-timer': 'S1486623941.314829,VS0,VE31',
+27 verbose headers   vary: 'Accept-Encoding' }
+28 silly get cb [ 200,
+28 silly get   { server: 'nginx/1.10.1',
+28 silly get     'content-type': 'application/json',
+28 silly get     'last-modified': 'Tue, 01 Jul 2014 03:05:19 GMT',
+28 silly get     etag: 'W/"53b2256f-187"',
+28 silly get     'content-encoding': 'gzip',
+28 silly get     'cache-control': 'max-age=300',
+28 silly get     'content-length': '237',
+28 silly get     'accept-ranges': 'bytes',
+28 silly get     date: 'Thu, 09 Feb 2017 07:05:41 GMT',
+28 silly get     via: '1.1 varnish',
+28 silly get     age: '0',
+28 silly get     connection: 'keep-alive',
+28 silly get     'x-served-by': 'cache-fra1239-FRA',
+28 silly get     'x-cache': 'MISS',
+28 silly get     'x-cache-hits': '0',
+28 silly get     'x-timer': 'S1486623941.314829,VS0,VE31',
+28 silly get     vary: 'Accept-Encoding' } ]
+29 verbose get saving golang to /Users/tpomerantz/.npm/registry.npmjs.org/golang/.cache.json
+30 silly addNameRange number 2 { name: 'golang', range: '*', hasData: true }
+31 silly addNameRange versions [ 'golang', [] ]
+32 verbose stack TypeError: Cannot read property 'latest' of undefined
+32 verbose stack     at next (/usr/local/lib/node_modules/npm/lib/cache/add-named.js:248:35)
+32 verbose stack     at setData (/usr/local/lib/node_modules/npm/lib/cache/add-named.js:236:5)
+32 verbose stack     at RES (/usr/local/lib/node_modules/npm/node_modules/inflight/inflight.js:23:14)
+32 verbose stack     at f (/usr/local/lib/node_modules/npm/node_modules/once/once.js:17:25)
+32 verbose stack     at fixName (/usr/local/lib/node_modules/npm/lib/cache/add-named.js:29:5)
+32 verbose stack     at saved (/usr/local/lib/node_modules/npm/lib/cache/caching-client.js:173:7)
+32 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/graceful-fs/polyfills.js:210:7
+32 verbose stack     at FSReqWrap.oncomplete (fs.js:82:15)
+33 verbose cwd /Users/tpomerantz/Desktop/server/deadrock
+34 error Darwin 16.4.0
+35 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "golang"
+36 error node v4.2.2
+37 error npm  v2.14.7
+38 error Cannot read property 'latest' of undefined
+39 error If you need help, you may report this error at:
+39 error     <https://github.com/npm/npm/issues>
+40 verbose exit [ 1, true ]

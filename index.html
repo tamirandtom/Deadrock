@@ -43,7 +43,7 @@
                   getTarget ng-mouseover="element.isCurrentlySelected = 1"
                   ng-mouseleave="element.isCurrentlySelected = 0" 
                   class='singername' 
-                  ng-class="{active: ((((element.death.toLowerCase().indexOf(filterage.toLowerCase()) != -1) || (element.date.toLowerCase().indexOf(filterdecade.toLowerCase()) != -1))))}">
+                  ng-class="{active: ((element.isvisible && $parent.currfilter == 12 ) || ((element.death.toLowerCase().indexOf(filterage.toLowerCase()) != -1) || (element.date.toLowerCase().indexOf(filterdecade.toLowerCase()) != -1)))}">
                         <div ng-if="element.isfirsdecade &&  element.year== 1970 " class='feedcol__texts'><br> If we add the musicians who had died in the 70s (they are also the most famous on the 27 list
                               - Joplin, Morrison and Hendrix), it seems clear that the highest column in the chart is 27.
                               <br><br></div>
